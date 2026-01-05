@@ -7,19 +7,19 @@ class OnboardingViewModel extends ChangeNotifier {
 
   final List<OnboardingModel> pages = [
     OnboardingModel(
-      image: 'assets/images/onboarding1.png',
+      image: 'assets/images/onBoarding1.png',
       title: 'Welcome to App',
       description:
           'Welcome! This app will help you manage tasks, organize your schedule, and keep your life on track. Swipe left to continue.Discover amazing features like smart notifications, task prioritization, and detailed analytics that make your workflow smoother.Discover amazing features like smart notifications, task prioritization, and detailed analytics that make your workflow smoother.Discover amazing features like smart notifications, task prioritization, and detailed analytics that make your workflow smoother.',
     ),
     OnboardingModel(
-      image: 'assets/images/onboarding2.png',
+      image: 'assets/images/onBoarding2.png',
       title: 'Discover Features',
       description:
           'Discover amazing features like smart notifications, task prioritization, and detailed analytics that make your workflow smoother.',
     ),
     OnboardingModel(
-      image: 'assets/images/onboarding3.png',
+      image: 'assets/images/onBoarding3.png',
       title: 'Get Started',
       description:
           'Get started today and enjoy a seamless experience. Press the button below to enter the app.',
