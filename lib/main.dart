@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // Import ScreenUtil
+import 'package:flutter_application_2/features/auth/view/login_screen.dart';
+import 'package:flutter_application_2/features/onBoarding/views/onboarding_view.dart';
 import 'package:flutter_application_2/features/splash/splash_screen.dart';
+import 'package:flutter_application_2/test.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,16 +13,15 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Initialize ScreenUtil
-    return ScreenUtilInit(
-      designSize: Size(375, 812,), 
-      minTextAdapt: true, 
-      splitScreenMode: false, 
-      builder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: SplashScreen(),
-        );
+    return MaterialApp(
+      initialRoute: '/',
+      debugShowCheckedModeBanner: false,
+      routes: {
+        '/': (context) => const SplashScreen(),
+        '/onboarding': (context) => const OnboardingView(),
+        '/home': (context) => const Scaffold(),
+        '/login': (context) => const LoginScreen(),
+        '/test': (context) => const Test(),
       },
     );
   }

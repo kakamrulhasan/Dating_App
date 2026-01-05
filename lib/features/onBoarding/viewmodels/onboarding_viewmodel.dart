@@ -10,7 +10,7 @@ class OnboardingViewModel extends ChangeNotifier {
       image: 'assets/images/onboarding1.png',
       title: 'Welcome to App',
       description:
-          'Welcome! This app will help you manage tasks, organize your schedule, and keep your life on track. Swipe left to continue.',
+          'Welcome! This app will help you manage tasks, organize your schedule, and keep your life on track. Swipe left to continue.Discover amazing features like smart notifications, task prioritization, and detailed analytics that make your workflow smoother.Discover amazing features like smart notifications, task prioritization, and detailed analytics that make your workflow smoother.Discover amazing features like smart notifications, task prioritization, and detailed analytics that make your workflow smoother.',
     ),
     OnboardingModel(
       image: 'assets/images/onboarding2.png',

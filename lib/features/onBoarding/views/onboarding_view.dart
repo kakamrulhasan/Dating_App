@@ -18,7 +18,7 @@ class _OnboardingViewState extends State<OnboardingView> {
         curve: Curves.easeInOut,
       );
     } else {
-      Navigator.pop(context); // or navigate to home
+      Navigator.pushReplacementNamed(context, '/login');
     }
   }
 
@@ -119,8 +119,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                       vm.currentPage == vm.pages.length - 1
                           ? "Get Started"
                           : "Next",
-                      style:
-                          const TextStyle(color: Colors.black, fontSize: 16),
+                      style: const TextStyle(color: Colors.black, fontSize: 16),
                     ),
                   ),
                 ],
