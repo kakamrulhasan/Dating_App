@@ -9,6 +9,9 @@ class RegisterScreen extends StatefulWidget {
   State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
+List<String> options = ['male', 'female', 'third gender'];
+String currentOption = options[0];
+
 class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -132,6 +135,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       'Phone Number',
                       style: TextStyle(color: Colors.white70, fontSize: 16),
                     ),
+
                     TextField(
                       controller: emailController,
                       keyboardType: TextInputType.emailAddress,
@@ -167,11 +171,87 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                     const SizedBox(height: 20),
+                    const Text(
+                      'Phone Number',
+                      style: TextStyle(color: Colors.white70, fontSize: 16),
+                    ),
+                    const SizedBox(height: 20),
+                    const Text(
+                      'Choose Your Gender',
+                      style: TextStyle(color: Colors.white70, fontSize: 16),
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment:
+                          MainAxisAlignment.spaceBetween, // horizontal spacing
+                      children: [
+                        // Male
+                        Row(
+                          children: [
+                            Radio<String>(
+                              value: options[0],
+                              groupValue: currentOption,
+                              onChanged: (value) {
+                                setState(() {
+                                  currentOption = value!;
+                                });
+                              },
+                              activeColor: AppColors.secondary,
+                            ),
+                            const Text(
+                              'Male',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+
+                        // Female
+                        Row(
+                          children: [
+                            Radio<String>(
+                              value: options[1],
+                              groupValue: currentOption,
+                              onChanged: (value) {
+                                setState(() {
+                                  currentOption = value!;
+                                });
+                              },
+                              activeColor: AppColors.secondary,
+                            ),
+                            const Text(
+                              'Female',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+
+                        // Third Gender
+                        Row(
+                          children: [
+                            Radio<String>(
+                              value: options[2],
+                              groupValue: currentOption,
+                              onChanged: (value) {
+                                setState(() {
+                                  currentOption = value!;
+                                });
+                              },
+                              activeColor: AppColors.secondary,
+                            ),
+                            const Text(
+                              'Third Gender',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
 
                     const Text(
                       'Date of Birth',
                       style: TextStyle(color: Colors.white70, fontSize: 16),
                     ),
+
                     TextField(
                       controller: emailController,
                       keyboardType: TextInputType.emailAddress,
@@ -180,45 +260,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       style: const TextStyle(color: Colors.white, fontSize: 16),
                       decoration: InputDecoration(
                         hintText: 'Select Date of Birth',
-                        hintStyle: const TextStyle(
-                          color: Colors.grey,
-                          fontSize: 14,
-                        ),
-                        filled: true,
-                        fillColor: AppColors.visibility,
-                        contentPadding: const EdgeInsets.symmetric(
-                          vertical: 18,
-                          horizontal: 16,
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(
-                            color: AppColors.primary,
-                            width: 1,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12),
-                          borderSide: const BorderSide(
-                            color: AppColors.secondary,
-                            width: 2,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 20),
-                    const Text(
-                      'Email Address',
-                      style: TextStyle(color: Colors.white70, fontSize: 16),
-                    ),
-                    TextField(
-                      controller: emailController,
-                      keyboardType: TextInputType.emailAddress,
-                      textInputAction: TextInputAction.next,
-                      cursorColor: Colors.white,
-                      style: const TextStyle(color: Colors.white, fontSize: 16),
-                      decoration: InputDecoration(
-                        hintText: 'Enter your email',
                         hintStyle: const TextStyle(
                           color: Colors.grey,
                           fontSize: 14,
@@ -257,6 +298,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       cursorColor: Colors.white,
                       style: const TextStyle(color: Colors.white, fontSize: 16),
                       decoration: InputDecoration(
+                        suffixIcon: const Icon(
+                          Icons.arrow_drop_down,
+                          color: Colors.grey,
+                        ),
                         hintText: 'United States of America',
                         hintStyle: const TextStyle(
                           color: Colors.grey,
@@ -285,6 +330,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                     const SizedBox(height: 20),
+
                     Row(
                       children: [
                         Expanded(
@@ -292,7 +338,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const Text(
-                                'Select Country',
+                                'Select State',
                                 style: TextStyle(
                                   color: Colors.white70,
                                   fontSize: 16,
@@ -309,7 +355,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   fontSize: 16,
                                 ),
                                 decoration: InputDecoration(
-                                  hintText: 'United States of America',
+                                  suffixIcon: const Icon(
+                                    Icons.arrow_drop_down,
+                                    color: Colors.grey,
+                                  ),
+                                  hintText: 'California',
                                   hintStyle: const TextStyle(
                                     color: Colors.grey,
                                     fontSize: 14,
@@ -339,15 +389,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             ],
                           ),
                         ),
-                        const SizedBox(
-                          width: 10,
-                        ), // spacing between two columns
+                        const SizedBox(width: 10),
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const Text(
-                                'Zip Code',
+                                'Select City',
                                 style: TextStyle(
                                   color: Colors.white70,
                                   fontSize: 16,
@@ -364,7 +412,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   fontSize: 16,
                                 ),
                                 decoration: InputDecoration(
-                                  hintText: '12345',
+                                  suffixIcon: const Icon(
+                                    Icons.arrow_drop_down,
+                                    color: Colors.grey,
+                                  ),
+                                  hintText: 'San Diego   ',
                                   hintStyle: const TextStyle(
                                     color: Colors.grey,
                                     fontSize: 14,
@@ -392,6 +444,49 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 ),
                               ),
                             ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 30),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/document');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        backgroundColor: const Color(0xFFEDDF99),
+                        minimumSize: const Size(400, 60),
+                      ),
+
+                      child: Text(
+                        'Verify Your Identity          ',
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 30),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Already have an account? ',
+                          style: TextStyle(color: Colors.white70, fontSize: 14),
+                        ),
+                        InkWell(
+                          onTap: (){
+                            Navigator.pushNamed(context, '/login');
+                          },
+                          child: const Text(
+                            'Login',
+                            style: TextStyle(
+                              color: AppColors.secondary,
+                              fontSize: 16,
+                            ),
                           ),
                         ),
                       ],

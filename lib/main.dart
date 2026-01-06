@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/features/auth/view/login_screen.dart';
 import 'package:flutter_application_2/features/auth/view/register_screen.dart';
+import 'package:flutter_application_2/features/document_screen.dart';
 import 'package:flutter_application_2/features/onBoarding/views/onboarding_view.dart';
 import 'package:flutter_application_2/features/splash/splash_screen.dart';
 import 'package:flutter_application_2/test.dart';
@@ -24,6 +25,7 @@ class MainApp extends StatelessWidget {
         '/login': (context) => const LoginScreen(),
         '/test': (context) => const Test(),
         '/register':(context) => const RegisterScreen(),
+       '/document':(context)=> const DocumentScreen(),         
       },
     );
   }
