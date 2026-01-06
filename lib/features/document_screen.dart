@@ -36,7 +36,7 @@ class DocumentScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 9),
                 const Text(
                   'We need to verify your identity as a proof',
                   style: TextStyle(color: Colors.white60, fontSize: 14),
