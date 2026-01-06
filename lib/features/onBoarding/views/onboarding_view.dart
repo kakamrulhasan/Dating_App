@@ -18,7 +18,7 @@ class _OnboardingViewState extends State<OnboardingView> {
         curve: Curves.easeInOut,
       );
     } else {
-      Navigator.pushReplacementNamed(context, '/login');
+      Navigator.pushReplacementNamed(context, '/register');
     }
   }
 
