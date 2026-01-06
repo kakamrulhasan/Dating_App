@@ -28,6 +28,20 @@ class DocumentScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(Icons.arrow_back, color: Colors.white),
+                    _buildDot(isActive: true),
+                    const SizedBox(width: 8),
+                    _buildDot(isActive: false),
+                    const SizedBox(width: 8),
+                    _buildDot(isActive: false),
+                  ],
+                ),
+                const Expanded(
+                  child: Divider(color: Colors.white, thickness: 6),
+                ),
                 const Text(
                   'Select Document Type',
                   style: TextStyle(
@@ -112,6 +126,7 @@ class DocumentScreen extends StatelessWidget {
           width: 1.5,
         ),
       ),
+
       child: Row(
         children: [
           Icon(icon, color: Colors.white),
@@ -153,4 +168,15 @@ class DocumentScreen extends StatelessWidget {
           : null,
     );
   }
+}
+
+Widget _buildDot({required bool isActive}) {
+  return Container(
+    width: isActive ? 120 : 120,
+    height: isActive ? 8:8,
+    decoration: BoxDecoration(
+      color: isActive ? Colors.white : Colors.white24,
+      shape: BoxShape.rectangle,
+    ),
+  );
 }
