@@ -18,7 +18,7 @@ class _VerificationNumberScreenState extends State<VerificationEmailScreen> {
       width: 56,
       height: 60,
       textStyle: TextStyle(
-        fontSize: 23, //
+        fontSize: 23, ///
         color: Colors.white,
         fontWeight: FontWeight.w600,
       ),
