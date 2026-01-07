@@ -170,13 +170,13 @@ class DocumentScreen extends StatelessWidget {
   }
 }
 
-Widget _buildDot({required bool isActive}) {
-  return Container(
-    width: isActive ? 120 : 120,
-    height: isActive ? 8 : 8,
-    decoration: BoxDecoration(
-      color: isActive ? Colors.white : Colors.white24,
-      shape: BoxShape.rectangle,
-    ),
-  );
-}
+// Widget _buildDot({required bool isActive}) {
+//   return Container(
+//     width: isActive ? 120 : 120,
+//     height: isActive ? 8 : 8,
+//     decoration: BoxDecoration(
+//       color: isActive ? Colors.white : Colors.white24,
+//       shape: BoxShape.rectangle,
+//     ),
+//   );
+// }

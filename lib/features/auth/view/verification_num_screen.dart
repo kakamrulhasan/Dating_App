@@ -3,14 +3,14 @@ import 'package:pinput/pinput.dart';
 
 import '../../../core/theme/text_theme.dart';
 
-class VerificationScreen extends StatefulWidget {
-  const VerificationScreen({super.key});
+class VerificationNumberScreen extends StatefulWidget {
+  const VerificationNumberScreen({super.key});
 
   @override
-  State<VerificationScreen> createState() => _VerificationScreenState();
+  State<VerificationNumberScreen> createState() => _VerificationNumberScreenState();
 }
 
-class _VerificationScreenState extends State<VerificationScreen> {
+class _VerificationNumberScreenState extends State<VerificationNumberScreen> {
   @override
   Widget build(BuildContext context) {
     final defaultPinTheme = PinTheme(
@@ -101,13 +101,13 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       Container(
                         width: 70,
                         height: 70,
-                        child: Icon(Icons.mail_outlined),
+                        child: Icon(Icons.phone_android),
                       ),
                     ],
                   ),
                   const SizedBox(height: 35),
                   const Text(
-                    'Enter Your Email',
+                    'Please Verify Your Phone',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -115,11 +115,19 @@ class _VerificationScreenState extends State<VerificationScreen> {
                     ),
                   ),
                   const Text(
-                    'Login to your account to explore about our app',
+                    'Number',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                    ),
+                  ),
+                  const Text(
+                    'Enter the 6 digit code we sent by SMS to',
                     style: TextStyle(color: Colors.white70, fontSize: 16),
                   ),
                   Text(
-                    'alexa.mate@example.com',
+                    '+1234 567 89',
                     style: TextStyle(
                       color: AppColors.secondary,
                       fontSize: 16,

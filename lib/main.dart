@@ -3,6 +3,7 @@ import 'package:flutter_application_2/features/auth/view/Forget_email_screen%20c
 import 'package:flutter_application_2/features/auth/view/Forget_number_screen.dart';
 import 'package:flutter_application_2/features/auth/view/login_screen.dart';
 import 'package:flutter_application_2/features/auth/view/register_screen.dart';
+import 'package:flutter_application_2/features/auth/view/verification_num_screen.dart';
 import 'package:flutter_application_2/features/document_screen.dart';
 import 'package:flutter_application_2/features/onBoarding/views/onboarding_view.dart';
 import 'package:flutter_application_2/features/splash/splash_screen.dart';
@@ -32,8 +33,8 @@ class MainApp extends StatelessWidget {
         '/document': (context) => const DocumentScreen(),
         '/forgetemail': (context) => const ForgetEmailScreen(),
         '/forgetnum': (context) => const ForgetNumberScreen(),
-        '/verification': (context) => const VerificationEmailScreen(),
-        
+        '/verifyemail': (context) => const VerificationEmailScreen(),
+        '/verifysms': (context) => const VerificationNumberScreen(),
       },
     );
   }

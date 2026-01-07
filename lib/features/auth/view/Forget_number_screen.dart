@@ -36,9 +36,16 @@ class _ForgetPasswordScreenState extends State<ForgetNumberScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      IconButton(icon: const Icon(Icons.arrow_back, color: Colors.white, size: 20), onPressed: () {
-                        Navigator.pop(context);
-                      },),
+                      IconButton(
+                        icon: const Icon(
+                          Icons.arrow_back,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
                       Text(
                         'Forgot Password',
                         style: TextStyle(
@@ -52,7 +59,7 @@ class _ForgetPasswordScreenState extends State<ForgetNumberScreen> {
                   ),
                   const SizedBox(height: 35),
                   const Text(
-                    'Enter Your Email',
+                    'Enter Your Phone Number',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -60,15 +67,15 @@ class _ForgetPasswordScreenState extends State<ForgetNumberScreen> {
                     ),
                   ),
                   const Text(
-                    'Login to your account to explore about our app',
+                    'Enter your phone number so we can send the code',
                     style: TextStyle(color: Colors.white70, fontSize: 16),
                   ),
                   const SizedBox(height: 30),
                   const Text(
-                    'Email Address',
-                    style: TextStyle(color: Colors.white70, fontSize: 16),
+                    'Phone Number',
+                    style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
-                  SizedBox(height: 5,),
+                  SizedBox(height: 5),
                   TextField(
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
@@ -76,9 +83,9 @@ class _ForgetPasswordScreenState extends State<ForgetNumberScreen> {
                     cursorColor: Colors.white,
                     style: const TextStyle(color: Colors.white, fontSize: 16),
                     decoration: InputDecoration(
-                      hintText: 'alexa.mate@example.com',
+                      hintText: '+1 234 567 89',
                       hintStyle: const TextStyle(
-                        color: Colors.grey,
+                        color: Colors.white70,
                         fontSize: 14,
                       ),
                       filled: true,
@@ -105,10 +112,9 @@ class _ForgetPasswordScreenState extends State<ForgetNumberScreen> {
                   ),
                   const SizedBox(height: 20),
 
-
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/verification');
+                      Navigator.pushNamed(context, '/verifysms');
                     },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -128,15 +134,15 @@ class _ForgetPasswordScreenState extends State<ForgetNumberScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        "Want to choose another way?",
+                        "Want to choose another way? ",
                         style: TextStyle(color: Colors.white70, fontSize: 14),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, '/Numberverification');
+                          Navigator.pushNamed(context, '/forgetemail');
                         },
                         child: const Text(
-                          'Use Phone Number',
+                          'Use Email',
                           style: TextStyle(
                             color: AppColors.secondary,
                             fontSize: 16,

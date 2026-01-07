@@ -36,9 +36,16 @@ class _ForgetEmailScreenState extends State<ForgetEmailScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      IconButton(icon: const Icon(Icons.arrow_back, color: Colors.white, size: 20), onPressed: () {
-                        Navigator.pop(context);
-                      },),
+                      IconButton(
+                        icon: const Icon(
+                          Icons.arrow_back,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
                       Text(
                         'Forgot Password',
                         style: TextStyle(
@@ -68,7 +75,7 @@ class _ForgetEmailScreenState extends State<ForgetEmailScreen> {
                     'Email Address',
                     style: TextStyle(color: Colors.white70, fontSize: 16),
                   ),
-                  SizedBox(height: 5,),
+                  SizedBox(height: 5),
                   TextField(
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
@@ -105,10 +112,9 @@ class _ForgetEmailScreenState extends State<ForgetEmailScreen> {
                   ),
                   const SizedBox(height: 20),
 
-
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/verification');
+                      Navigator.pushNamed(context, '/verifyemail');
                     },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -128,7 +134,7 @@ class _ForgetEmailScreenState extends State<ForgetEmailScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        "Want to choose another way?",
+                        "Want to choose another way? ",
                         style: TextStyle(color: Colors.white70, fontSize: 14),
                       ),
                       InkWell(
