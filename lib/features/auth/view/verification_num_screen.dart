@@ -7,7 +7,8 @@ class VerificationNumberScreen extends StatefulWidget {
   const VerificationNumberScreen({super.key});
 
   @override
-  State<VerificationNumberScreen> createState() => _VerificationNumberScreenState();
+  State<VerificationNumberScreen> createState() =>
+      _VerificationNumberScreenState();
 }
 
 class _VerificationNumberScreenState extends State<VerificationNumberScreen> {
@@ -72,7 +73,7 @@ class _VerificationNumberScreenState extends State<VerificationNumberScreen> {
                   ),
                   Center(
                     child: Container(
-                      width: 150, 
+                      width: 150,
                       child: Divider(color: Colors.white, thickness: 5),
                     ),
                   ),
@@ -171,7 +172,7 @@ class _VerificationNumberScreenState extends State<VerificationNumberScreen> {
                     onCompleted: (pin) {
                       debugPrint('OTP: $pin');
                     },
-                          ),
+                  ),
 
                   const SizedBox(height: 20),
 
