@@ -28,20 +28,20 @@ class DocumentScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Icon(Icons.arrow_back, color: Colors.white),
-                    _buildDot(isActive: true),
-                    const SizedBox(width: 8),
-                    _buildDot(isActive: false),
-                    const SizedBox(width: 8),
-                    _buildDot(isActive: false),
-                  ],
-                ),
-                const Expanded(
-                  child: Divider(color: Colors.white, thickness: 6),
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     Icon(Icons.arrow_back, color: Colors.white),
+                //     _buildDot(isActive: true),
+                //     const SizedBox(width: 8),
+                //     _buildDot(isActive: false),
+                //     const SizedBox(width: 8),
+                //     _buildDot(isActive: false),
+                //   ],
+                // ),
+                // const Expanded(
+                //   child: Divider(color: Colors.white, thickness: 6),
+                // ),
                 const Text(
                   'Select Document Type',
                   style: TextStyle(

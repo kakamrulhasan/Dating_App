@@ -13,6 +13,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   flutter_stepindicator: ^0.1.7
   mobile_scanner: ^7.1.4
+  pinput: ^6.0.1
   smooth_page_indicator: ^2.0.1
 
 

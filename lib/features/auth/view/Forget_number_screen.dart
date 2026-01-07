@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/core/theme/text_theme.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class ForgetNumberScreen extends StatefulWidget {
+  const ForgetNumberScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<ForgetNumberScreen> createState() => _ForgetPasswordScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _ForgetPasswordScreenState extends State<ForgetNumberScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -33,10 +33,26 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset('assets/images/gem.png', height: 60, width: 60),
-                  const SizedBox(height: 27),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(icon: const Icon(Icons.arrow_back, color: Colors.white, size: 20), onPressed: () {
+                        Navigator.pop(context);
+                      },),
+                      Text(
+                        'Forgot Password',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                      Text(""),
+                    ],
+                  ),
+                  const SizedBox(height: 35),
                   const Text(
-                    'Welcome Back',
+                    'Enter Your Email',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -52,6 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     'Email Address',
                     style: TextStyle(color: Colors.white70, fontSize: 16),
                   ),
+                  SizedBox(height: 5,),
                   TextField(
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
@@ -59,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     cursorColor: Colors.white,
                     style: const TextStyle(color: Colors.white, fontSize: 16),
                     decoration: InputDecoration(
-                      hintText: 'Enter your email',
+                      hintText: 'alexa.mate@example.com',
                       hintStyle: const TextStyle(
                         color: Colors.grey,
                         fontSize: 14,
@@ -87,52 +104,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const Text(
-                    'Password',
-                    style: TextStyle(color: Colors.white70, fontSize: 16),
-                  ),
-                  TextField(
-                    controller: passwordController,
-                    keyboardType: TextInputType.visiblePassword,
-                    textInputAction: TextInputAction.next,
-                    cursorColor: Colors.white,
-                    style: const TextStyle(color: Colors.white, fontSize: 16),
-                    decoration: InputDecoration(
-                      hintText: 'Enter your password',
-                      hintStyle: const TextStyle(
-                        color: Colors.grey,
-                        fontSize: 14,
-                      ),
-                      suffixIcon: const Icon(
-                        Icons.visibility,
-                        color: Colors.grey,
-                      ),
-                      filled: true,
-                      fillColor: AppColors.visibility,
-                      contentPadding: const EdgeInsets.symmetric(
-                        vertical: 18,
-                        horizontal: 16,
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(
-                          color: AppColors.primary,
-                          width: 1,
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(
-                          color: AppColors.secondary,
-                          width: 1,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 40),
+
+
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/forgetemail');
+                      Navigator.pushNamed(context, '/verification');
                     },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -143,7 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
 
                     child: Text(
-                      'Login',
+                      'Send Code',
                       style: const TextStyle(color: Colors.black, fontSize: 16),
                     ),
                   ),
@@ -152,15 +128,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        "Don't have an account? ",
+                        "Want to choose another way?",
                         style: TextStyle(color: Colors.white70, fontSize: 14),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, '/register');
+                          Navigator.pushNamed(context, '/Numberverification');
                         },
                         child: const Text(
-                          'Register',
+                          'Use Phone Number',
                           style: TextStyle(
                             color: AppColors.secondary,
                             fontSize: 16,
