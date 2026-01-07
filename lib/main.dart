@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/features/auth/view/Forget_email_screen%20copy.dart';
 import 'package:flutter_application_2/features/auth/view/Forget_number_screen.dart';
+import 'package:flutter_application_2/features/auth/view/change_password_successfully.dart';
 import 'package:flutter_application_2/features/auth/view/login_screen.dart';
+import 'package:flutter_application_2/features/auth/view/password_recreate.dart';
 import 'package:flutter_application_2/features/auth/view/register_screen.dart';
 import 'package:flutter_application_2/features/auth/view/verification_num_screen.dart';
 import 'package:flutter_application_2/features/document_screen.dart';
@@ -35,6 +37,9 @@ class MainApp extends StatelessWidget {
         '/forgetnum': (context) => const ForgetNumberScreen(),
         '/verifyemail': (context) => const VerificationEmailScreen(),
         '/verifysms': (context) => const VerificationNumberScreen(),
+        '/repasscreate': (context) => const PasswordRecreate(),
+        '/passwordscuccess': (context)=> const passwordResetSuccessfully(),
+        
       },
     );
   }

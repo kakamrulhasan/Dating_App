@@ -1,32 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:pinput/pinput.dart';
+import 'package:flutter_application_2/core/theme/text_theme.dart';
 
-import '../../../core/theme/text_theme.dart';
-
-class VerificationEmailScreen extends StatefulWidget {
-  const VerificationEmailScreen({super.key});
+class passwordResetSuccessfully extends StatefulWidget {
+  const passwordResetSuccessfully({super.key});
 
   @override
-  State<VerificationEmailScreen> createState() =>
-      _VerificationNumberScreenState();
+  State<passwordResetSuccessfully> createState() =>
+      _passwordResetSuccessfullyState();
 }
 
-class _VerificationNumberScreenState extends State<VerificationEmailScreen> {
+class _passwordResetSuccessfullyState extends State<passwordResetSuccessfully> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    final defaultPinTheme = PinTheme(
-      width: 56,
-      height: 60,
-      textStyle: TextStyle(
-        fontSize: 23,
-        color: Colors.white,
-        fontWeight: FontWeight.w600,
-      ),
-      decoration: BoxDecoration(
-        color: Colors.transparent,
-        border: Border(bottom: BorderSide(color: Colors.white, width: 2)),
-      ),
-    );
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: Stack(
@@ -60,15 +48,15 @@ class _VerificationNumberScreenState extends State<VerificationEmailScreen> {
                         },
                       ),
                       Text(
-                        '     Verification',
+                        '  Forgot Password',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                          fontSize: 16,
                         ),
                       ),
-                      Text(''),
-                      Text(''),
+                      Text(""),
+                      Text(""),
                     ],
                   ),
                   const SizedBox(height: 35),
@@ -102,13 +90,13 @@ class _VerificationNumberScreenState extends State<VerificationEmailScreen> {
                       Container(
                         width: 70,
                         height: 70,
-                        child: Icon(Icons.mail_outlined),
+                        child: Icon(Icons.check_circle_outline_outlined,weight: 70,),
                       ),
                     ],
                   ),
                   const SizedBox(height: 35),
                   const Text(
-                    'Enter Your Email',
+                    'Congratulation!',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -116,55 +104,15 @@ class _VerificationNumberScreenState extends State<VerificationEmailScreen> {
                     ),
                   ),
                   const Text(
-                    'Login to your account to explore about our app',
-                    style: TextStyle(color: Colors.white70, fontSize: 16),
-                  ),
-                  Text(
-                    'alexa.mate@example.com',
-                    style: TextStyle(
-                      color: AppColors.secondary,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 30),
-
-                  Pinput(
-                    length: 5,
-                    keyboardType: TextInputType.number,
-                    defaultPinTheme: defaultPinTheme,
-                    focusedPinTheme: defaultPinTheme.copyWith(
-                      decoration: const BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                            color: AppColors.secondary,
-                            width: 2.5,
-                          ),
-                        ),
-                      ),
-                    ),
-                    submittedPinTheme: defaultPinTheme.copyWith(
-                      decoration: const BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                            color: AppColors.secondary,
-                            width: 2.5,
-                          ),
-                        ),
-                      ),
-                    ),
-                    showCursor: true,
-
-                    onCompleted: (pin) {
-                      debugPrint('OTP: $pin');
-                    },
+                    'Your password successfully updated!',
+                    style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
 
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 25),
 
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/repasscreate');
+                      Navigator.pushNamed(context, '/login');
                     },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -175,31 +123,9 @@ class _VerificationNumberScreenState extends State<VerificationEmailScreen> {
                     ),
 
                     child: Text(
-                      'Verify',
+                      'Back to Login',
                       style: const TextStyle(color: Colors.black, fontSize: 16),
                     ),
-                  ),
-                  SizedBox(height: 24),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Didn't receive the code? ",
-                        style: TextStyle(color: Colors.white70, fontSize: 18),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/register');
-                        },
-                        child: const Text(
-                          'Resend Code',
-                          style: TextStyle(
-                            color: AppColors.secondary,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    ],
                   ),
                 ],
               ),

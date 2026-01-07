@@ -70,6 +70,12 @@ class _VerificationNumberScreenState extends State<VerificationNumberScreen> {
                       Text(''),
                     ],
                   ),
+                  Center(
+                    child: Container(
+                      width: 150, 
+                      child: Divider(color: Colors.white, thickness: 5),
+                    ),
+                  ),
                   const SizedBox(height: 35),
                   Stack(
                     alignment: Alignment.center,
@@ -171,7 +177,7 @@ class _VerificationNumberScreenState extends State<VerificationNumberScreen> {
 
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/verification');
+                      Navigator.pushNamed(context, '/repasscreate');
                     },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
