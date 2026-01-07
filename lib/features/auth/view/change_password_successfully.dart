@@ -94,7 +94,7 @@ class _passwordResetSuccessfullyState extends State<passwordResetSuccessfully> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 35),
+                  const SizedBox(height: 35),//
                   const Text(
                     'Congratulation!',
                     style: TextStyle(
