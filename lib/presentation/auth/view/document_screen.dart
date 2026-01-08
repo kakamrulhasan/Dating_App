@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/core/route/route_name.dart';
 import 'package:flutter_application_2/core/theme/text_theme.dart';
 
 class DocumentScreen extends StatefulWidget {
@@ -165,7 +166,7 @@ class _DocumentScreenState extends State<DocumentScreen> {
                   height: 52,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/scanId');
+                      Navigator.pushNamed(context, RouteName.scanIdScreen);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFFF5E39C),

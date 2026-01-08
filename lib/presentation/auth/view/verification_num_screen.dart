@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/core/route/route_name.dart';
 import 'package:pinput/pinput.dart';
 
 import '../../../core/theme/text_theme.dart';
@@ -203,7 +204,7 @@ class _VerificationNumberScreenState extends State<VerificationNumberScreen> {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, '/register');
+                          Navigator.pushNamed(context, RouteName.RegisterScreen);
                         },
                         child: const Text(
                           'Resend Code',

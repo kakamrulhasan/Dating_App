@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/core/route/route_name.dart';
 
 class ScanIdInformation extends StatefulWidget {
   const ScanIdInformation({super.key});
@@ -156,7 +157,7 @@ class _ScanIdInformationState extends State<ScanIdInformation> {
                 const Spacer(),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/register');
+                    Navigator.pushNamed(context, RouteName.RegisterScreen);
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(

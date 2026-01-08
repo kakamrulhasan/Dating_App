@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/core/route/route_name.dart';
 import '../viewmodels/onboarding_viewmodel.dart';
 
 class OnboardingView extends StatefulWidget {
@@ -18,7 +19,7 @@ class _OnboardingViewState extends State<OnboardingView> {
         curve: Curves.easeInOut,
       );
     } else {
-      Navigator.pushReplacementNamed(context, '/register');
+      Navigator.pushReplacementNamed(context, RouteName.RegisterScreen);
     }
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/core/route/route_name.dart';
 import 'package:flutter_application_2/core/theme/text_theme.dart';
 
 class ScanIdCard extends StatefulWidget {
@@ -102,7 +103,7 @@ class _ScanIdCardState extends State<ScanIdCard> {
                     InkWell(
                       onTap: () {
                         print('object');
-                        Navigator.pushNamed(context, '/scanIdInfo');
+                        Navigator.pushNamed(context, RouteName.ScanIdInformation);
                       },
                       child: Stack(
                         alignment: Alignment.center,

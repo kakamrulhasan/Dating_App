@@ -1,5 +1,5 @@
 class RouteName {
-  static const String SplashScreen = '/';
+  static const String splashScreen = '/';
   static const String onBoardingScreen = '/onboarding';
   static const String RegisterScreen = '/register';
   static const String DocumentScreen = '/document';

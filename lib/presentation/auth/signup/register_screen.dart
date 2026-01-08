@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/core/route/route_name.dart';
 import 'package:flutter_application_2/core/theme/app_images_theme.dart';
 import 'package:flutter_application_2/core/theme/text_theme.dart';
 
@@ -451,7 +452,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     SizedBox(height: 30),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/document');
+                        Navigator.pushNamed(context, RouteName.DocumentScreen);
                       },
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
@@ -479,7 +480,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         InkWell(
                           onTap: (){
-                            Navigator.pushNamed(context, '/login');
+                            Navigator.pushNamed(context, RouteName.LoginScreen);
                           },
                           child: const Text(
                             'Login',

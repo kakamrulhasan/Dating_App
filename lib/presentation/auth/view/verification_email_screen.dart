@@ -1,20 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/core/theme/text_theme.dart';
+import 'package:flutter_application_2/core/route/route_name.dart';
+import 'package:pinput/pinput.dart';
 
-class passwordResetSuccessfully extends StatefulWidget {
-  const passwordResetSuccessfully({super.key});
+import '../../../core/theme/text_theme.dart';
+
+class VerificationEmailScreen extends StatefulWidget {
+  const VerificationEmailScreen({super.key});
 
   @override
-  State<passwordResetSuccessfully> createState() =>
-      _passwordResetSuccessfullyState();
+  State<VerificationEmailScreen> createState() =>
+      _VerificationNumberScreenState();
 }
 
-class _passwordResetSuccessfullyState extends State<passwordResetSuccessfully> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-
+class _VerificationNumberScreenState extends State<VerificationEmailScreen> {
   @override
   Widget build(BuildContext context) {
+    final defaultPinTheme = PinTheme(
+      width: 56,
+      height: 60,
+      textStyle: TextStyle(
+        fontSize: 23,
+        color: Colors.white,
+        fontWeight: FontWeight.w600,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        border: Border(bottom: BorderSide(color: Colors.white, width: 2)),
+      ),
+    );
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: Stack(
@@ -48,15 +61,15 @@ class _passwordResetSuccessfullyState extends State<passwordResetSuccessfully> {
                         },
                       ),
                       Text(
-                        '  Forgot Password',
+                        '     Verification',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: 18,
                         ),
                       ),
-                      Text(""),
-                      Text(""),
+                      Text(''),
+                      Text(''),
                     ],
                   ),
                   const SizedBox(height: 35),
@@ -90,13 +103,13 @@ class _passwordResetSuccessfullyState extends State<passwordResetSuccessfully> {
                       Container(
                         width: 70,
                         height: 70,
-                        child: Icon(Icons.check_circle_outline_outlined,weight: 70,),
+                        child: Icon(Icons.mail_outlined),
                       ),
                     ],
                   ),
                   const SizedBox(height: 35),
                   const Text(
-                    'Congratulation!',
+                    'Enter Your Email',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -104,15 +117,55 @@ class _passwordResetSuccessfullyState extends State<passwordResetSuccessfully> {
                     ),
                   ),
                   const Text(
-                    'Your password successfully updated!',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
+                    'Login to your account to explore about our app',
+                    style: TextStyle(color: Colors.white70, fontSize: 16),
+                  ),
+                  Text(
+                    'alexa.mate@example.com',
+                    style: TextStyle(
+                      color: AppColors.secondary,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 30),
+
+                  Pinput(
+                    length: 5,
+                    keyboardType: TextInputType.number,
+                    defaultPinTheme: defaultPinTheme,
+                    focusedPinTheme: defaultPinTheme.copyWith(
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            color: AppColors.secondary,
+                            width: 2.5,
+                          ),
+                        ),
+                      ),
+                    ),
+                    submittedPinTheme: defaultPinTheme.copyWith(
+                      decoration: const BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            color: AppColors.secondary,
+                            width: 2.5,
+                          ),
+                        ),
+                      ),
+                    ),
+                    showCursor: true,
+
+                    onCompleted: (pin) {
+                      debugPrint('OTP: $pin');
+                    },
                   ),
 
-                  const SizedBox(height: 25),
+                  const SizedBox(height: 20),
 
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/login');
+                      Navigator.pushNamed(context, RouteName.repasswordCreate);
                     },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -123,9 +176,31 @@ class _passwordResetSuccessfullyState extends State<passwordResetSuccessfully> {
                     ),
 
                     child: Text(
-                      'Back to Login',
+                      'Verify',
                       style: const TextStyle(color: Colors.black, fontSize: 16),
                     ),
+                  ),
+                  SizedBox(height: 24),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Didn't receive the code? ",
+                        style: TextStyle(color: Colors.white70, fontSize: 18),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, RouteName.repasswordCreate);
+                        },
+                        child: const Text(
+                          'Resend Code',
+                          style: TextStyle(
+                            color: AppColors.secondary,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

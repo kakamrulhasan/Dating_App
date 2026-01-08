@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/core/route/route_name.dart';
 import 'package:flutter_application_2/core/theme/text_theme.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -132,7 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 40),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/forgetemail');
+                      Navigator.pushNamed(context, RouteName.ForgetEmailScreen);
                     },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
@@ -157,7 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, '/register');
+                          Navigator.pushNamed(context, RouteName.RegisterScreen);
                         },
                         child: const Text(
                           'Register',

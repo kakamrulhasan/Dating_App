@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/core/route/route_name.dart';
 import 'package:flutter_application_2/core/theme/text_theme.dart';
 
 class PasswordRecreate extends StatefulWidget {
@@ -162,7 +163,7 @@ class _PasswordRecreateState extends State<PasswordRecreate> {
                   SizedBox(height: 40),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/passwordscuccess');
+                      Navigator.pushNamed(context, RouteName.passwordResetSuccessfully);
                     },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(

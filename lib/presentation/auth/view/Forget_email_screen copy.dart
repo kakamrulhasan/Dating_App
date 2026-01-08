@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/core/route/route_name.dart';
 import 'package:flutter_application_2/core/theme/text_theme.dart';
 
 class ForgetEmailScreen extends StatefulWidget {
@@ -139,7 +140,7 @@ class _ForgetEmailScreenState extends State<ForgetEmailScreen> {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, '/forgetnum');
+                          Navigator.pushNamed(context, RouteName.ForgetNumberScreen);
                         },
                         child: const Text(
                           'Use Phone Number',
