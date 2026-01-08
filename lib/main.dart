@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/core/route/route_import_path.dart';
+import 'package:flutter_application_2/core/route/route_name.dart';
 import 'package:flutter_application_2/features/auth/view/Forget_email_screen%20copy.dart';
 import 'package:flutter_application_2/features/auth/view/Forget_number_screen.dart';
 import 'package:flutter_application_2/features/auth/view/change_password_successfully.dart';
@@ -25,29 +27,34 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/',
+      //initialRoute: '/',
       debugShowCheckedModeBanner: false,
-      routes: {
-        '/': (context) => const SplashScreen(),
-        '/onboarding': (context) => const OnboardingView(),
-        '/home': (context) => const Scaffold(),
-        '/login': (context) => const LoginScreen(),
-        '/test': (context) => const Test(),
-        '/register': (context) => const RegisterScreen(),
-        '/document': (context) => const DocumentScreen(),
-        '/scanId': (context)=> const ScanIdCard(),
-        '/scanIdInfo':(context)=> const ScanIdInformation(),
+      onGenerateRoute:AppRouter.generateRoute,
+      initialRoute: RouteName.SplashScreen,
 
-        //login part
-        '/forgetemail': (context) => const ForgetEmailScreen(),
-        '/forgetnum': (context) => const ForgetNumberScreen(),
-        '/verifyemail': (context) => const VerificationEmailScreen(),
-        '/verifysms': (context) => const VerificationNumberScreen(),
-        '/repasscreate': (context) => const PasswordRecreate(),
-        '/passwordscuccess': (context)=> const passwordResetSuccessfully(),
+
+
+      // routes: {
+      //   '/': (context) => const SplashScreen(),
+      //   '/onboarding': (context) => const OnboardingView(),
+      //   '/home': (context) => const Scaffold(),
+      //   '/login': (context) => const LoginScreen(),
+      //   '/test': (context) => const Test(),
+      //   '/register': (context) => const RegisterScreen(),
+      //   '/document': (context) => const DocumentScreen(),
+      //   '/scanId': (context)=> const ScanIdCard(),
+      //   '/scanIdInfo':(context)=> const ScanIdInformation(),
+
+      //   //login part
+      //   '/forgetemail': (context) => const ForgetEmailScreen(),
+      //   '/forgetnum': (context) => const ForgetNumberScreen(),
+      //   '/verifyemail': (context) => const VerificationEmailScreen(),
+      //   '/verifysms': (context) => const VerificationNumberScreen(),
+      //   '/repasscreate': (context) => const PasswordRecreate(),
+      //   '/passwordscuccess': (context)=> const passwordResetSuccessfully(),
         
 
-      },
+      // },
     );
   }
 }
