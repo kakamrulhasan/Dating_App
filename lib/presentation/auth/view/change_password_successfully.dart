@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/core/route/route_name.dart';
 import 'package:flutter_application_2/core/theme/text_theme.dart';
+import 'package:flutter_application_2/presentation/auth/view/widgets/primary_button.dart';
 
 class passwordResetSuccessfully extends StatefulWidget {
   const passwordResetSuccessfully({super.key});
@@ -91,7 +92,10 @@ class _passwordResetSuccessfullyState extends State<passwordResetSuccessfully> {
                       Container(
                         width: 70,
                         height: 70,
-                        child: Icon(Icons.check_circle_outline_outlined,weight: 70,),
+                        child: Icon(
+                          Icons.check_circle_outline_outlined,
+                          weight: 70,
+                        ),
                       ),
                     ],
                   ),
@@ -111,22 +115,28 @@ class _passwordResetSuccessfullyState extends State<passwordResetSuccessfully> {
 
                   const SizedBox(height: 25),
 
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, RouteName.LoginScreen);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      backgroundColor: const Color(0xFFEDDF99),
-                      minimumSize: const Size(400, 60),
-                    ),
+                  // ElevatedButton(
+                  //   onPressed: () {
+                  //     Navigator.pushNamed(context, RouteName.LoginScreen);
+                  //   },
+                  //   style: ElevatedButton.styleFrom(
+                  //     shape: RoundedRectangleBorder(
+                  //       borderRadius: BorderRadius.circular(15),
+                  //     ),
+                  //     backgroundColor: const Color(0xFFEDDF99),
+                  //     minimumSize: const Size(400, 60),
+                  //   ),
 
-                    child: Text(
-                      'Back to Login',
-                      style: const TextStyle(color: Colors.black, fontSize: 16),
-                    ),
+                  //   child: Text(
+                  //     'Back to Login',
+                  //     style: const TextStyle(color: Colors.black, fontSize: 16),
+                  //   ),
+                  // ),
+                  PrimaryButton(
+                    text: 'Back to login',
+                    onPressed: () {
+                     Navigator.pushNamed(context, RouteName.LoginScreen) ;
+                    },
                   ),
                 ],
               ),

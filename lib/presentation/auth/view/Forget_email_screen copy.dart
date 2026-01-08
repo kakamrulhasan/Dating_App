@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/core/route/route_name.dart';
 import 'package:flutter_application_2/core/theme/text_theme.dart';
+import 'package:flutter_application_2/presentation/auth/view/widgets/primary_button.dart';
 
 class ForgetEmailScreen extends StatefulWidget {
   const ForgetEmailScreen({super.key});
@@ -113,23 +114,10 @@ class _ForgetEmailScreenState extends State<ForgetEmailScreen> {
                   ),
                   const SizedBox(height: 20),
 
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/verifyemail');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      backgroundColor: const Color(0xFFEDDF99),
-                      minimumSize: const Size(400, 60),
-                    ),
-
-                    child: Text(
-                      'Send Code',
-                      style: const TextStyle(color: Colors.black, fontSize: 16),
-                    ),
-                  ),
+                  
+                  PrimaryButton(text: 'Send Code', onPressed: (){
+                    Navigator.pushNamed(context, RouteName.VerificationEmailScreen);
+                  }),
                   SizedBox(height: 24),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -140,7 +128,10 @@ class _ForgetEmailScreenState extends State<ForgetEmailScreen> {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, RouteName.ForgetNumberScreen);
+                          Navigator.pushNamed(
+                            context,
+                            RouteName.ForgetNumberScreen,
+                          );
                         },
                         child: const Text(
                           'Use Phone Number',

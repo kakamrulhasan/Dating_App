@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/core/route/route_name.dart';
 import 'package:flutter_application_2/core/theme/text_theme.dart';
+import 'package:flutter_application_2/presentation/auth/view/widgets/primary_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -131,23 +132,31 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(height: 40),
-                  ElevatedButton(
+
+                  // ElevatedButton(
+                  //   onPressed: () {
+                  //     Navigator.pushNamed(context, RouteName.ForgetEmailScreen);
+                  //   },
+                  //   style: ElevatedButton.styleFrom(
+                  //     shape: RoundedRectangleBorder(
+                  //       borderRadius: BorderRadius.circular(15),
+                  //     ),
+                  //     backgroundColor: const Color(0xFFEDDF99),
+                  //     minimumSize: const Size(400, 60),
+                  //   ),
+
+                  //   child: Text(
+                  //     'Login',
+                  //     style: const TextStyle(color: Colors.black, fontSize: 16),
+                  //   ),
+                  // ),
+                  
+                  (PrimaryButton(
+                    text: 'Login',
                     onPressed: () {
                       Navigator.pushNamed(context, RouteName.ForgetEmailScreen);
                     },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      backgroundColor: const Color(0xFFEDDF99),
-                      minimumSize: const Size(400, 60),
-                    ),
-
-                    child: Text(
-                      'Login',
-                      style: const TextStyle(color: Colors.black, fontSize: 16),
-                    ),
-                  ),
+                  )),
                   SizedBox(height: 24),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -158,7 +167,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, RouteName.RegisterScreen);
+                          Navigator.pushNamed(
+                            context,
+                            RouteName.RegisterScreen,
+                          );
                         },
                         child: const Text(
                           'Register',

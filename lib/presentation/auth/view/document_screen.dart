@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/core/route/route_name.dart';
 import 'package:flutter_application_2/core/theme/text_theme.dart';
+import 'package:flutter_application_2/presentation/auth/view/widgets/primary_button.dart';
 
 class DocumentScreen extends StatefulWidget {
   const DocumentScreen({super.key});
@@ -164,25 +165,28 @@ class _DocumentScreenState extends State<DocumentScreen> {
                 SizedBox(
                   width: double.infinity,
                   height: 52,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, RouteName.scanIdScreen);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFF5E39C),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(14),
-                      ),
-                    ),
-                    child: const Text(
-                      'Continue',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
+                  // child: ElevatedButton(
+                  //   onPressed: () {
+                  //     Navigator.pushNamed(context, RouteName.scanIdScreen);
+                  //   },
+                  //   style: ElevatedButton.styleFrom(
+                  //     backgroundColor: const Color(0xFFF5E39C),
+                  //     shape: RoundedRectangleBorder(
+                  //       borderRadius: BorderRadius.circular(14),
+                  //     ),
+                  //   ),
+                  //   child: const Text(
+                  //     'Continue',
+                  //     style: TextStyle(
+                  //       color: Colors.black,
+                  //       fontSize: 16,
+                  //       fontWeight: FontWeight.w600,
+                  //     ),
+                  //   ),
+                  // ),
+                  child: PrimaryButton(text: 'Continue', onPressed: (){
+                    Navigator.pushNamed(context, RouteName.scanIdScreen);
+                  }),
                 ),
                 Center(child: Container()),
                 SizedBox(height: 50),
@@ -195,13 +199,3 @@ class _DocumentScreenState extends State<DocumentScreen> {
   }
 }
 
-// Widget _buildDot({required bool isActive}) {
-//   return Container(
-//     width: isActive ? 120 : 120,
-//     height: isActive ? 8 : 8,
-//     decoration: BoxDecoration(
-//       color: isActive ? Colors.white : Colors.white24,
-//       shape: BoxShape.rectangle,
-//     ),
-//   );
-// }

@@ -129,6 +129,7 @@ class _ForgetPasswordScreenState extends State<ForgetNumberScreen> {
                       style: const TextStyle(color: Colors.black, fontSize: 16),
                     ),
                   ),
+                  
                   SizedBox(height: 24),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
