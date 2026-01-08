@@ -5,6 +5,8 @@ import 'package:flutter_application_2/features/auth/view/change_password_success
 import 'package:flutter_application_2/features/auth/view/login_screen.dart';
 import 'package:flutter_application_2/features/auth/view/password_recreate.dart';
 import 'package:flutter_application_2/features/auth/view/register_screen.dart';
+import 'package:flutter_application_2/features/auth/view/scan_id_information.dart';
+import 'package:flutter_application_2/features/auth/view/scan_id_screen.dart';
 import 'package:flutter_application_2/features/auth/view/verification_num_screen.dart';
 import 'package:flutter_application_2/features/auth/view/document_screen.dart';
 import 'package:flutter_application_2/features/onBoarding/views/onboarding_view.dart';
@@ -33,12 +35,17 @@ class MainApp extends StatelessWidget {
         '/test': (context) => const Test(),
         '/register': (context) => const RegisterScreen(),
         '/document': (context) => const DocumentScreen(),
+        '/scanId': (context)=> const ScanIdCard(),
+        '/scanIdInfo':(context)=> const ScanIdInformation(),
+
+        //login part
         '/forgetemail': (context) => const ForgetEmailScreen(),
         '/forgetnum': (context) => const ForgetNumberScreen(),
         '/verifyemail': (context) => const VerificationEmailScreen(),
         '/verifysms': (context) => const VerificationNumberScreen(),
         '/repasscreate': (context) => const PasswordRecreate(),
         '/passwordscuccess': (context)=> const passwordResetSuccessfully(),
+        
 
       },
     );

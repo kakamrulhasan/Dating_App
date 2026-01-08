@@ -164,7 +164,9 @@ class _DocumentScreenState extends State<DocumentScreen> {
                   width: double.infinity,
                   height: 52,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/scanId');
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFFF5E39C),
                       shape: RoundedRectangleBorder(
